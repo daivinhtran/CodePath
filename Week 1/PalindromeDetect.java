@@ -1,9 +1,12 @@
 /*
 Challenge 4 - Palindrome detection
 
-A palindrome is a word, phrase, or sequence of characters that reads the same backward as forward, e.g., madam or nurses run.
+A palindrome is a word, phrase, or sequence of characters that reads 
+the same backward as forward, e.g., madam or nurses run.
 
-Write a program which takes a String as input and returns a boolean value which is true if the input is a palindrome and false if it is not, considering only alphanumeric characters and ignoring case.
+Write a program which takes a String as input and returns a boolean 
+value which is true if the input is a palindrome and false if it is 
+not, considering only alphanumeric characters and ignoring case.
 
 Example:
 
@@ -12,39 +15,34 @@ _ "race a car" is not a palindrome and should return false
  */
 public class PalindromeDetect {
     public static boolean isPalindrome(String str) {
-        str = str.toLowerCase();
+
+
         int leftPtr = 0;
         int rightPtr = str.length() - 1;
+        char[] arr = str.toLowerCase().toCharArray();
 
-        while (leftPtr <= rightPtr) {
-            char leftChar = str.charAt(leftPtr);
-            char rightChar = str.charAt(rightPtr);
-            if (!isValid(leftChar)) {
+        while (leftPtr < rightPtr) {
+            
+            while (!isValid(arr[leftPtr])) {
                 leftPtr++;
-                continue;
             }
 
-            if (!isValid(rightChar)) {
+            while (!isValid(arr[rightPtr])) {
                 rightPtr--;
-                continue;
             }
 
-            if (leftChar != rightChar) return false;
-
-            leftPtr++;
-            rightPtr--;
+            if (arr[leftPtr++] != arr[rightPtr--]) return false;
         }
 
         return true;
     }
     
     public static boolean isValid(char a) {
-        if ((a >= '0' && a <= '9') || (a >= 'a' && a <= 'z')) return true;
-        return false;
+        return ((a >= '0' && a <= '9') || (a >= 'a' && a <= 'z'));
     }
 
     public static void main(String[] args) {
-        String str = "race a car";
+        String str = "raca car";
         System.out.println(isPalindrome(str));
     }
 }
