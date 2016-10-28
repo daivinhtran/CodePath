@@ -1,3 +1,15 @@
+/*
+Challenge 4 - Palindrome detection
+
+A palindrome is a word, phrase, or sequence of characters that reads the same backward as forward, e.g., madam or nurses run.
+
+Write a program which takes a String as input and returns a boolean value which is true if the input is a palindrome and false if it is not, considering only alphanumeric characters and ignoring case.
+
+Example:
+
+_ "A man, a plan, a canal: Panama" is a palindrome and should return true
+_ "race a car" is not a palindrome and should return false
+ */
 public class PalindromeDetect {
     public static boolean isPalindrome(String str) {
         str = str.toLowerCase();

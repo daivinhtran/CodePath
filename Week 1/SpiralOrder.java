@@ -1,3 +1,26 @@
+/*
+Challenge 3 - Spiral Order
+A matrix is a two-dimensional array of r rows, each with c columns, 
+such that the total number of elements in the matrix is r * c.
+
+The spiral order of such a matrix is the list of all its elements 
+starting at index (0, 0) and proceeding in clockwise order from 
+the outermost values to innermost values.
+
+Write a program that takes an int[][] matrix as its input and 
+returns an int[] of all the input's values in spiral order.
+
+Example: Given the following matrix:
+
+int[][] matrix = {
+  { 1, 2, 3 },
+  { 4, 5, 6 },
+  { 7, 8, 9 }
+};
+
+Your program should return {1,2,3,6,9,8,7,4,5}
+ */
+
 public class SpiralOrder {
     public static int[] spiralOrder(int[][] matrix) {
         int h = matrix.length;
