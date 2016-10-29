@@ -68,7 +68,7 @@ public class LongestPalindrome {
         return s.substring(maxLeft, maxRight + 1);
     }
     public static void main(String[] args) {
-        System.out.println(longestPalindrome("bbb"));
+        System.out.println(longestPalindrome("bbbb"));
         // "abbbba"
     }
 }

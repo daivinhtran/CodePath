@@ -18,10 +18,10 @@ public class RemoveDuplicate {
         int size = removeDuplicate(arr);
 
         for (int i : arr) {
-            System.out.println(i);
+            System.out.print(i+" ");
         }
 
-        System.out.println("size: " + size);
+        System.out.println("\nsize: " + size);
     }
 
     public static int removeDuplicate(int[] nums) {

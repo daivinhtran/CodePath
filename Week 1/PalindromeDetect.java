@@ -1,4 +1,4 @@
-/*
+vi/*
 Challenge 4 - Palindrome detection
 
 A palindrome is a word, phrase, or sequence of characters that reads 
@@ -15,7 +15,6 @@ _ "race a car" is not a palindrome and should return false
  */
 public class PalindromeDetect {
     public static boolean isPalindrome(String str) {
-
 
         int leftPtr = 0;
         int rightPtr = str.length() - 1;
@@ -42,7 +41,7 @@ public class PalindromeDetect {
     }
 
     public static void main(String[] args) {
-        String str = "raca car";
+        String str = "a         a";
         System.out.println(isPalindrome(str));
     }
 }
