@@ -36,24 +36,25 @@ public class SpiralOrder {
 
         while(true) {
             // top
+            if (bottomRow < topRow) break;
             for (int i = leftCol; i <= rightCol; i++) {
                 nums[j++] = matrix[topRow][i];
             }
             topRow++;
 
             // right
+            if (rightCol < leftCol) break;
             for (int i = topRow; i <= bottomRow; i++) {
                 nums[j++] = matrix[i][rightCol];
             }
             rightCol--;
 
-            if (bottomRow >= topRow) {
-                // bottom
-                for (int i = rightCol; i >= leftCol; i--) {
-                    nums[j++] = matrix[bottomRow][i];
-                }
-                bottomRow--;
+            // bottom
+            if (bottomRow < topRow) break;
+            for (int i = rightCol; i >= leftCol; i--) {
+                nums[j++] = matrix[bottomRow][i];
             }
+            bottomRow--;
 
             if (rightCol < leftCol) break;
             // left
@@ -61,18 +62,13 @@ public class SpiralOrder {
                 nums[j++] = matrix[i][leftCol];
             }
             leftCol++;
-
-            if (rightCol < leftCol) break;
         }
 
         return nums;
     }
 
     public static void main(String[] args) {
-        int[][] matrix = {
-          { 1, 2, 3 },
-          { 4, 5, 6 }
-        };
+        int[][] matrix = {{1}, {2}, {3}};
         int[] nums = spiralOrder(matrix);
         for (int i : nums) {
             System.out.println(i);
