@@ -1,4 +1,4 @@
-vi/*
+/*
 Challenge 4 - Palindrome detection
 
 A palindrome is a word, phrase, or sequence of characters that reads 
@@ -22,10 +22,12 @@ public class PalindromeDetect {
 
         while (leftPtr < rightPtr) {
             
-            while (!isValid(arr[leftPtr])) {
+            // Find the next 'Valid' character
+            while (!isValid(arr[leftPtr])) {    
                 leftPtr++;
             }
 
+            // Find the next 'Valid' character
             while (!isValid(arr[rightPtr])) {
                 rightPtr--;
             }
