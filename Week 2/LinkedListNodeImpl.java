@@ -1,19 +1,39 @@
-public interface LinkedListNode<E> {
+public class LinkedListNodeImpl<E> implements LinkedListNode<E> {
+    private E value = null;
+    private LinkedListNode next;
 
-    /* getter/setter for this node's value */
-    E getValue();
-    void setValue(E value);
+    public LinkedListNodeImpl() {
+        value = null;
+    }
 
-    /* getter/setter for the subsequent node, or null if this is the last node */
-    LinkedListNode<E> getNext();
-    void setNext(LinkedListNode<E> next);
-
-    /**
-     * Initialize this node and all of its subsequent nodes from
-     * an array of values, starting with the head value at index 0
-     *
-     * @param listValues - the ordered values for the whole list
-     */
-    void setValuesFromArray(E[] listValues);
-
+    @Override
+    public E getValue() {
+        return value;
+    }
+    @Override
+    public void setValue(E value) {
+        this.value = value;
+    }
+    @Override
+    public LinkedListNode<E> getNext() {
+        return this.next;
+    }
+    @Override
+    public void setNext(LinkedListNode<E> next) {
+        this.next = next;
+    }
+    @Override
+    public void setValuesFromArray(E[] listValues) {
+        if (listValues != null || listValues.length != 0) {
+            this.setValue(listValues[0]);
+            LinkedListNode current = this;
+            int count = 0;
+            while (++count < listValues.length) {
+                current.setNext(new LinkedListNodeImpl<E>());
+                current = current.getNext();
+                current.setValue(listValues[count]);
+                
+            }
+        }
+    }
 }
