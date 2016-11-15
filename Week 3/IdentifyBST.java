@@ -39,5 +39,3 @@ public class IdentifyBST<E extends Comparable<E>> {
 		System.out.println(x.isValidBST(two));
 	}
 }
-// 		1
-//
