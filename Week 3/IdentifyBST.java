@@ -1,3 +1,10 @@
+/*
+Challenge 1 - Identify Binary Search Trees
+Write a program that takes as its input an instance 
+of TreeNode representing the root of a tree and returns 
+a boolean value which is true if the input is a binary 
+search tree and false if it is not.
+ */
 public class IdentifyBST<E extends Comparable<E>> {
 
 	public boolean isValidBST(TreeNode<E> root) {

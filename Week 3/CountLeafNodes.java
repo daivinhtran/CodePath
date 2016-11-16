@@ -1,3 +1,10 @@
+/*
+Challenge 2 - Count Leaf Nodes
+Write a program that takes as its input an instance 
+of TreeNode representing the root of a tree and returns
+ a int value representing the number of nodes in the tree with no children.
+
+ */
 public class CountLeafNodes {
 	public static <E> int countLeaf(TreeNode<E> root) {
 		if (root == null)

@@ -1,3 +1,9 @@
+/*
+Challenge 3 - Compare Trees
+Write a program that takes as its input two instances of 
+TreeNode and returns a boolean value which is true if both 
+trees have an identical structure with the same node values.
+ */
 public class CompareTrees {
 	public static <E> boolean compareTree(TreeNode<E> root1, TreeNode<E> root2) {
 		if (root1 == null && root2 == null)
